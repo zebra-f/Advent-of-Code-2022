@@ -4,9 +4,11 @@ import string
 with open("input.txt") as f:
     rucksacks = [rucksack[:-1] for rucksack in f.readlines()]
 
-lowercase_priority = {letter: i + 1 for i, letter in enumerate(string.ascii_lowercase)}
-upercase_priority = {letter: i + 27 for i, letter in enumerate(string.ascii_uppercase)}
-priority = {**lowercase_priority, **upercase_priority}
+# lowercase_priority = {letter: i + 1 for i, letter in enumerate(string.ascii_lowercase)}
+# uppercase_priority = {letter: i + 27 for i, letter in enumerate(string.ascii_uppercase)}
+# priority = {**lowercase_priority, **uppercase_priority}
+
+priority = {letter: i + 1 for i, letter in enumerate(string.ascii_letters)}
 
 def part_one(rucksacks: list[str]) -> int:
     count = 0
