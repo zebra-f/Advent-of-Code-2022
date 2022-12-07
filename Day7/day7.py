@@ -14,7 +14,7 @@ class DirNode:
 class FilesystemTree:
     def __init__(self, lines):
         self.root = DirNode('root')
-        self.build_filesystem_tree(self.root, lines)
+        self.build_filesystem_tree(self.root, lines[1:])
     
     def mkdir(self, name, prev):
         dir = DirNode(name, prev)
