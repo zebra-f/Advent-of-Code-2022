@@ -67,6 +67,8 @@ def part_two(grind: list[list]) -> int:
     max_viewing_distance = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
+            if (i, j) in border_indices(grid):
+                continue
             viewing_distances = []
             current = grid[i][j]
             
