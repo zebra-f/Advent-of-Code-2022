@@ -32,9 +32,7 @@ def part_one(steps: list) -> int:
             directions =  ((0, 1), (0, -1), (1, 0), (-1, 0), (-1, 1), (1, 1), (-1, -1), (1, -1))
             close = False
             for x, y in directions:
-                current_tail_positon = [*tail_position]
-                current_tail_positon[0] += x
-                current_tail_positon[1] += y
+                current_tail_positon = [tail_position[0]+x, tail_position[1]+y]
                 if current_tail_positon == head_position:
                     close = True
                     break
@@ -54,9 +52,7 @@ def part_one(steps: list) -> int:
             else:
                 directions =  ((2, 1), (1, 2), (2, -1), (1, -2), (-2, 1), (-1, 2), (-2, -1), (-1, -2))
                 for x, y in directions:
-                    new_tail_positon = [*tail_position]
-                    new_tail_positon[0] += x
-                    new_tail_positon[1] += y
+                    new_tail_positon = [tail_position[0]+x, tail_position[1]+y]
                     if new_tail_positon == head_position:
                         if new_tail_positon[0] > tail_position[0]:
                             tail_position[0] += 1
